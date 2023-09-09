@@ -1,10 +1,8 @@
-import os
 from typing import Any
-from uuid import uuid4
 from flask import Flask, jsonify, request
 from keras.models import model_from_json
 from flask_cors import CORS
-from keras.preprocessing import image
+from PIL import Image
 
 import logging
 import numpy as np
@@ -43,10 +41,8 @@ SKIN_CLASSES = {
   6: 'Vascular skin lesion'
 }
 
-UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 # load model from json file
@@ -54,7 +50,7 @@ json_file = open("model/model.json", 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 
-# load weights into new model
+
 model: Any = model_from_json(loaded_model_json)
 model.load_weights("model/model.h5")
 
@@ -90,15 +86,11 @@ def predict():
       })
       return resp
 
-    filename = uuid4().hex + '.' + file.mimetype.rsplit('/', 1)[1].lower()
-    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
     # make prediction
-    img = image.load_img(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    img = Image.open(file.stream)
 
     img = img.resize((224, 224))
 
-    img = img.resize((224, 224))
     img = np.array(img)
     img = img.reshape((1, 224, 224, 3))
     img = img / 255
@@ -110,14 +102,14 @@ def predict():
     disease = SKIN_CLASSES[pred]
     accuracy = prediction[0][pred]
 
-    logger.info(f'Prediction: {disease} - {accuracy}')
+    logger.info(f'Prediction: {disease} - {accuracy * 100:.2f}%')
 
     resp = jsonify({
       "status": "success",
       "message": "Prediction successful",
       "data": {
         "disease": disease,
-        "accuracy": "{:.2f}".format(accuracy * 100)
+        "accuracy": "{:.2f}%".format(accuracy * 100)
       }
     })
     resp.status_code = 200
