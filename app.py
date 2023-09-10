@@ -1,3 +1,4 @@
+import os
 from typing import Any
 from flask import Flask, jsonify, request
 from keras.models import model_from_json
@@ -125,4 +126,4 @@ def predict():
 
 
 if __name__ == '__main__':
-  app.run()
+  app.run(host="0.0.0.0", port=int(os.getenv('PORT') or 5000))
