@@ -110,7 +110,7 @@ def predict():
       "message": "Prediction successful",
       "data": {
         "disease": disease,
-        "accuracy": "{:.2f}%".format(accuracy * 100)
+        "accuracy": "{:.2f}".format(accuracy * 100)
       }
     })
     resp.status_code = 200
