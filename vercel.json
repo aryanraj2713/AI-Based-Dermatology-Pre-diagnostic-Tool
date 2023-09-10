@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9942b970e010f25b2718aff890a9ea0b22f35fdd64a44cc9a16f0356de77eea
-size 199
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+      {
+          "src": "./app.py",
+          "use": "@vercel/python"
+      }
+  ],
+  "installCommand": "pip install -r requirements.txt -t ./",
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "/"
+      }
+  ]
+}
