@@ -1,4 +1,4 @@
-Flask==2.3.3
-Flask-Cors==4.0.0
-Pillow==10.0.0
-tensorflow==2.13.0
+flask
+flask_cors
+pillow
+tensorflow
