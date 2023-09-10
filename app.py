@@ -52,7 +52,7 @@ json_file.close()
 
 
 model: Any = model_from_json(loaded_model_json)
-model.load_weights("model/model.h5")
+model.load_weights("model/weights.h5")
 
 logger.info('Model loaded')
 
@@ -89,11 +89,12 @@ def predict():
     # make prediction
     img = Image.open(file.stream)
 
-    img = img.resize((224, 224))
+    img = img.resize((640, 310))
 
     img = np.array(img)
-    img = img.reshape((1, 224, 224, 3))
-    img = img / 255
+    img = np.expand_dims(img, axis=0)
+    # img = img.reshape((1, 224, 224, 3))
+    # img = img / 255
 
     prediction = model.predict(img)
 
