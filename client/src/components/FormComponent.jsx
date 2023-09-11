@@ -11,9 +11,9 @@ const FormComponent = () => {
   <div class="container max-w-screen-lg mx-auto">
     <div>
       <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-        <div class="grid gap-4 gap-y-2 text-sm grid-cols-2 lg:grid-cols-2">
+        <div class="grid gap-4 gap-y-2 text-sm grid-cols-2 lg:grid-cols-2 max-md:flex max-md:flex-col">
 
-          <div class="lg:col-span-1">
+          <div class="lg:col-span-1 ">
             <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
               <div class="md:col-span-4">
                 <label for="full_name">Full Name</label>
@@ -49,7 +49,7 @@ const FormComponent = () => {
             </div>
           </div>
 
-          <div className='col-span-1 rounded-md text-white bg-[#000000cd] flex justify-center items-center'>
+          <div className='max-md:h-[30vh] max-md:w-[90%] max-md:mx-auto max-md:my-10 col-span-1 rounded-md text-white bg-[#000000cd] flex justify-center items-center'>
             Upload Image Here
           </div>
         </div>
