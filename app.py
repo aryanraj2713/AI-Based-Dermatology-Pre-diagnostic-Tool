@@ -30,7 +30,7 @@ logger = Logger('app')
 
 app = Flask(__name__)
 
-CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True, origins="*")
 
 SKIN_CLASSES = {
   0: 'Actinic Keratoses (Solar Keratoses) or intraepithelial Carcinoma (Bowen’s disease)',
