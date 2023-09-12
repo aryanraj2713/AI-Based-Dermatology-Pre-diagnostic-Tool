@@ -1,26 +1,30 @@
 .swiper {
-    width: 90vw;
+  width: 90vw;
 }
 
 .swiper-slide {
-    width: 100%;
+  width: 100%;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .swiper {
     width: 100vw;
   }
 }
 
-.about,.team__header {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background: rgb(34,195,107);
-    background: radial-gradient(circle, rgba(34,195,107,1) 0%, rgba(111,254,207,1) 100%);
+.about,
+.team__header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: rgb(34, 195, 107);
+  background: radial-gradient(
+    circle,
+    rgba(34, 195, 107, 1) 0%,
+    rgba(111, 254, 207, 1) 100%
+  );
 }
 
 .card {
   border-radius: 20px;
-  box-shadow: 0px 4px 4px 0px #DCD2B7;
+  box-shadow: 0px 4px 4px 0px #dcd2b7;
 }
-
