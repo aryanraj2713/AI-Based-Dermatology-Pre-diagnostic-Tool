@@ -2,6 +2,7 @@ import About from './components/About';
 // import Navbar from "./components/Navbar";
 import { Dialog } from '@headlessui/react';
 import { Element, Link } from 'react-scroll';
+import { Toaster } from 'sonner';
 import { useSnapshot } from 'valtio';
 import { store } from '../state';
 import Logo1 from './assets/Ministry-of-AYUSH-logo-1-3.jpg';
@@ -22,6 +23,7 @@ export function App() {
   };
   return (
     <Element name="Home">
+      <Toaster richColors closeButton expand />
       <Dialog open={snap.isDialogOpen} onClose={handleClose}>
         <Dialog.Panel>
           <Dialog.Title>Deactivate account</Dialog.Title>
