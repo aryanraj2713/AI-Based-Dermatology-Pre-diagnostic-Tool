@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import './styles.css';
 
 
+
 import PptImage1 from '../assets/Heisenberg-SIH2023.pptx_page-0001.jpg'
 import PptImage2 from '../assets/Heisenberg-SIH2023.pptx_page-0002.jpg'
 import PptImage3 from '../assets/Heisenberg-SIH2023.pptx_page-0003.jpg'
