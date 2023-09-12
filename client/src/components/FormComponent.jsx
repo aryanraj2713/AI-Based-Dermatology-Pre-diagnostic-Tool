@@ -292,12 +292,25 @@ const FormComponent = () => {
         </div>
       </div>
       {result && (
-        <div className="w-full bg-[#EFFDF3] shadow-lg p-4 px-4 md:p-8 mb-6 max-w-screen-lg rounded-lg">
+        <div className="w-full bg-[#EFFDF3] shadow-lg p-4 mb-6 max-w-screen-lg rounded-lg">
           <div>
             <p className="text-lg font-semibold">
               Predicted Disease: {result.disease}
             </p>
-            <p>Accuracy: {result.accuracy}%</p>
+            <p className='mb-1'>Accuracy: {result.accuracy}%</p>
+            {/* show yellow note if accuracy below 85 */}
+            {result.accuracy < 85 && (
+              <p className="text-yellow-700">
+                Note: Accuracy is below 85%. Results might be inaccurate.
+                Please consult a doctor for further diagnosis. <br/>
+                Retry with a better image.
+              </p>
+            )}
+            <p className='mt-10 text-sm'>
+            <span className="mt-4">Results are </span>
+            <span className="font-semibold">not</span>
+            <span> a substitute for professional medical advice.</span>
+            </p>
           </div>
         </div>
       )}

@@ -11,3 +11,7 @@
 .ppt-header {
   font-family: 'Montserrat', sans-serif;
 }
+
+#bp-web-widget {
+  z-index: 1000;
+}
