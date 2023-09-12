@@ -5,7 +5,7 @@ const Team = () => {
   return (
     <>
       <div className="team__header w-full flex justify-center items-center h-[100px] mt-32">
-        <h1 class="team-title px-16 text-xl py-1 bg-white shadow-md rounded-full">
+        <h1 className="team-title px-16 text-xl py-1 bg-white shadow-md rounded-full">
           <span>Team</span>
         </h1>
       </div>

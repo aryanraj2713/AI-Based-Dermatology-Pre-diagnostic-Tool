@@ -1,6 +1,9 @@
 import About from './components/About';
 // import Navbar from "./components/Navbar";
+import { Dialog } from '@headlessui/react';
 import { Element, Link } from 'react-scroll';
+import { useSnapshot } from 'valtio';
+import { store } from '../state';
 import Logo1 from './assets/Ministry-of-AYUSH-logo-1-3.jpg';
 import LogoBanner from './assets/SIH2023-logo-final.png';
 import FormComponent from './components/FormComponent';
@@ -8,8 +11,33 @@ import Slider from './components/Slider';
 import Team from './components/Team';
 
 export function App() {
+  const snap = useSnapshot(store);
+
+  const handleClose = () => {
+    store.isDialogOpen = false;
+  };
+
+  const handleOpen = () => {
+    store.isDialogOpen = true;
+  };
   return (
     <Element name="Home">
+      <Dialog open={snap.isDialogOpen} onClose={handleClose}>
+        <Dialog.Panel>
+          <Dialog.Title>Deactivate account</Dialog.Title>
+          <Dialog.Description>
+            This will permanently deactivate your account
+          </Dialog.Description>
+
+          <p>
+            Are you sure you want to deactivate your account? All of your data
+            will be permanently removed. This action cannot be undone.
+          </p>
+
+          <button onClick={handleClose}>Deactivate</button>
+          <button onClick={handleClose}>Cancel</button>
+        </Dialog.Panel>
+      </Dialog>
       <div>
         <header className="bg-[#F8F9FA] w-full h-20 sticky z-50 top-0">
           <nav className="flex justify-between items-center w-full mx-auto h-full px-10 py-2 max-md:px-4">
@@ -52,7 +80,7 @@ export function App() {
                   </p>
                 </Link>
               </div>
-              <a className="flex gap-0 max-md:hidden">
+              <div className="flex gap-0 max-md:hidden">
                 <a
                   target="_blank"
                   href="https://ayush.gov.in/"
@@ -67,7 +95,7 @@ export function App() {
                     className="w-auto h-14"
                   />
                 </a>
-              </a>
+              </div>
             </div>
           </nav>
         </header>
@@ -79,7 +107,10 @@ export function App() {
               </div>
             </div>
           </Link>
-          <div className="flex gap-4 items-center w-fit mr-10 max-md:w-auto max-md:text-sm max-md:m-0 max-md:mr-4">
+          <div
+            className="flex gap-4 items-center w-fit mr-10 max-md:w-auto max-md:text-sm max-md:m-0 max-md:mr-4"
+            onClick={handleOpen}
+          >
             <div className="bg-lime-100 hover:bg-lime-200 transition-all 0.2s ease-in-out cursor-pointer btn flex justify-center items-center px-6 py-2 text-[#000] rounded-full">
               Login with Mobile Number
             </div>
