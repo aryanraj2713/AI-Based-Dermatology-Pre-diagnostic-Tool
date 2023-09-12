@@ -18,7 +18,7 @@ export function App() {
   };
   return (
     <Element name="Home">
-      <Toaster richColors closeButton />
+      <Toaster richColors closeButton expand />
       {isModalOpen ? <LoginModal /> : ''}
       <div>
         <header className="bg-[#F8F9FA] w-full h-20 sticky z-50 top-0">
