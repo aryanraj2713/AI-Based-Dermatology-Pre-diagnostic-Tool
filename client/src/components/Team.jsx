@@ -1,17 +1,17 @@
-import Card from './Card';
-import './styles.css';
-import Image1 from '../assets/JatinImg.jpg';
+import Image5 from '../assets/AakashImg.png';
 import Image2 from '../assets/AryanImg.jpg';
+import Image1 from '../assets/JatinImg.jpg';
 import Image3 from '../assets/MathangyImg.jpg';
 import Image4 from '../assets/RavikulImg.jpg';
-import Image5 from '../assets/AakashImg.png';
 import Image6 from '../assets/SubbuImg.jpg';
+import Card from './Card';
+import './styles.css';
 
 const Team = () => {
   return (
     <>
       <div className="team__header w-full flex justify-center items-center h-[100px] mt-32">
-        <h1 class="team-title px-16 text-xl py-1 bg-white shadow-md rounded-full">
+        <h1 className="team-title px-16 text-xl py-1 bg-white shadow-md rounded-full">
           <span>Team</span>
         </h1>
       </div>

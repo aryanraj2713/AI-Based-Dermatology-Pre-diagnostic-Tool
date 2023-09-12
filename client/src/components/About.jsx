@@ -1,4 +1,3 @@
-import React from 'react';
 import '../index.css';
 
 const About = () => {
@@ -6,7 +5,7 @@ const About = () => {
     <div className="" id="About">
       <div className="about flex justify-center items-center p-2 w-full h-[100px]">
         <div className="title-wrapper -mt-[0.5rem]">
-          <h1 class="about-title px-16 text-xl py-1 bg-white shadow-md rounded-full max-md:text-lg">
+          <h1 className="about-title px-16 text-xl py-1 bg-white shadow-md rounded-full max-md:text-lg">
             <span>About</span>
           </h1>
         </div>

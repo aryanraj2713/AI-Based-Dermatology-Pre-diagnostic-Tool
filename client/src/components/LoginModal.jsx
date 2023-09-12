@@ -46,11 +46,11 @@ const LoginModal = () => {
                   </Dialog.Title>
                   <div className="my-6">
                     <form action="">
-                      <div class="mb-6">
-                        {/* <label for="number" class="block mb-2 text-lg font-medium text-gray-900">Enter your number</label> */}
+                      <div className="mb-6">
+                        {/* <label for="number" className="block mb-2 text-lg font-medium text-gray-900">Enter your number</label> */}
                         <input
                           id="number"
-                          class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                          className="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                           placeholder="8610736312"
                           required
                         />

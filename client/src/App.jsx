@@ -62,7 +62,7 @@ export function App() {
                   </p>
                 </Link>
               </div>
-              <a className="flex gap-0 max-md:hidden">
+              <div className="flex gap-0 max-md:hidden">
                 <a
                   target="_blank"
                   href="https://ayush.gov.in/"
@@ -77,7 +77,7 @@ export function App() {
                     className="w-auto h-14"
                   />
                 </a>
-              </a>
+              </div>
             </div>
           </nav>
         </header>

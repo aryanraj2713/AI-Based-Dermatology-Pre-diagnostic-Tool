@@ -10,6 +10,7 @@ const FormComponent = () => {
   const [otherCond, setOtherCond] = useState('NA');
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -42,6 +43,8 @@ const FormComponent = () => {
         });
         return;
       }
+
+      setResult(data.data);
 
       if (data.status === 'success') {
         const pred = data.data;
@@ -288,6 +291,16 @@ const FormComponent = () => {
           </div>
         </div>
       </div>
+      {result && (
+        <div className="w-full bg-[#EFFDF3] shadow-lg p-4 px-4 md:p-8 mb-6 max-w-screen-lg rounded-lg">
+          <div>
+            <p className="text-lg font-semibold">
+              Predicted Disease: {result.disease}
+            </p>
+            <p>Accuracy: {result.accuracy}%</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
