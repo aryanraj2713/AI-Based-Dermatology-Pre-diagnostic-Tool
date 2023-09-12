@@ -1,24 +1,24 @@
 .swiper {
-    width: 90vw;
+  width: 90vw;
 }
 
 .swiper-slide {
-    width: 100%;
+  width: 100%;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .swiper {
     width: 100vw;
   }
 }
 
 .about {
-    background-image: url("../assets/Rectangle.svg");
+  background-image: url('../assets/Rectangle.svg');
 }
 .team__header {
-  background-image: url("../assets/Rectangle2.jpg");
+  background-image: url('../assets/Rectangle2.jpg');
 }
 .card {
   border-radius: 20px;
-  box-shadow: 0px 4px 4px 0px #DCD2B7;
+  box-shadow: 0px 4px 4px 0px #dcd2b7;
 }
