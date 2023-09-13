@@ -3,11 +3,11 @@ import { useDropzone } from 'react-dropzone';
 import { toast } from 'sonner';
 
 const FormComponent = () => {
-  const [username, setUserName] = useState('Jatin');
-  const [useremail, setUserEmail] = useState('main@gmail.com');
+  const [username, setUserName] = useState('');
+  const [useremail, setUserEmail] = useState('');
   const [age, setAge] = useState(19);
-  const [prevCond, setPrevCond] = useState('Melanoma');
-  const [otherCond, setOtherCond] = useState('NA');
+  const [prevCond, setPrevCond] = useState('');
+  const [otherCond, setOtherCond] = useState('');
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -297,19 +297,19 @@ const FormComponent = () => {
             <p className="text-lg font-semibold">
               Predicted Disease: {result.disease}
             </p>
-            <p className='mb-1'>Accuracy: {result.accuracy}%</p>
+            <p className="mb-1">Accuracy: {result.accuracy}%</p>
             {/* show yellow note if accuracy below 85 */}
             {result.accuracy < 85 && (
               <p className="text-yellow-700">
-                Note: Accuracy is below 85%. Results might be inaccurate.
-                Please consult a doctor for further diagnosis. <br/>
+                Note: Accuracy is below 85%. Results might be inaccurate. Please
+                consult a doctor for further diagnosis. <br />
                 Retry with a better image.
               </p>
             )}
-            <p className='mt-10 text-sm'>
-            <span className="mt-4">Results are </span>
-            <span className="font-semibold">not</span>
-            <span> a substitute for professional medical advice.</span>
+            <p className="mt-10 text-sm">
+              <span className="mt-4">Results are </span>
+              <span className="font-semibold">not</span>
+              <span> a substitute for professional medical advice.</span>
             </p>
           </div>
         </div>
