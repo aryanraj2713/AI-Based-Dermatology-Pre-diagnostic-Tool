@@ -1,6 +1,2 @@
-runtime: python39
-entrypoint: gunicorn -b :$PORT main:app
-
-handlers:
-- url: /.*
-  script: auto
+runtime: python311
+instance_class: F4_1G

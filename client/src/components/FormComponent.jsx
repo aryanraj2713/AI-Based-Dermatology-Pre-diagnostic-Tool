@@ -26,7 +26,7 @@ const FormComponent = () => {
       const formData = new FormData();
       formData.append('image', file);
 
-      const resp = await fetch('https://sih-2023.up.railway.app/predict', {
+      const resp = await fetch('https://sih-2023-tf.el.r.appspot.com/predict', {
         method: 'POST',
         body: formData,
       });
