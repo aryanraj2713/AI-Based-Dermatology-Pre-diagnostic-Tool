@@ -21,11 +21,13 @@ export function App() {
       <Toaster richColors closeButton expand />
       {isModalOpen ? <LoginModal /> : ''}
       <div>
-        <header className="bg-[#F8F9FA] w-full h-20 sticky z-50 top-0">
+        <header className="bg-[#F8F9FA] w-full h-20 sticky z-50 top-0 shadow-md">
           <nav className="flex justify-between items-center w-full mx-auto h-full px-10 py-2 max-md:px-4">
-            <h1 className="font-semibold text-lg max-md:text-xs ">
-              AI-Based Dermatological <br></br> Diagnosis Tool
-            </h1>
+            <a href="/">
+              <h1 className="font-semibold text-lg max-md:text-xs ">
+                AI-Based Dermatological <br></br> Diagnosis Tool
+              </h1>
+            </a>
             <div className="flex gap-10 justify-center items-center">
               <div className="flex gap-4 max-md:gap-2">
                 <Link

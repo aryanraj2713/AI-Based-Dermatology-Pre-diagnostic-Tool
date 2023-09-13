@@ -14,7 +14,7 @@ const About = () => {
         <div className="about__main rounded-md max-md:w-[90%] w-[30%] max-md:h-[40vh] h-[300px] bg-gray-500">
           Demo Video
         </div>
-        <div className="flex flex-col gap-10 w-[30%] max-md:w-[90%]">
+        <div className="flex flex-col items-center gap-10 w-[30%] max-md:w-[90%]">
           <a
             href="https://github.com/aryanraj2713/SIH-2023"
             className="block max-md:mx-auto max-md:w-[60%]"
@@ -40,13 +40,10 @@ const About = () => {
               <p className="text-sm">Github Code/Repo</p>
             </div>
           </a>
-          <div className="about__text max:md-text-center w-[70%] max-lg:w-[90%] max-md:mx-auto">
+          <div className="about__text max:md-text-center w-[80%] max-lg:w-[90%] max-md:mx-auto">
             <p className="max-md:text-center">
-              What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a
-              type specimen book.
+            The demo showcases an advanced AI model, EfficientNet, trained on the HAM10000 dataset to diagnose six distinct skin diseases. Users can upload skin images for preliminary diagnosis. Additionally, the integrated chatbot allows users to inquire about disease symptoms, precautions, and disease severity, providing a comprehensive resource for skin disease-related queries
+about - demo
             </p>
           </div>
         </div>
@@ -54,31 +51,13 @@ const About = () => {
       <div className="my-10 w-full flex justify-center items-center h-auto text-justify">
         <p className="w-[90%] text-lg my-5 max-md:text-[16px]">
           <span className="w-full font-medium block text-center my-2">
-            About Short :{' '}
+          AI-Based Preliminary Diagnosis of Skin Diseases:
           </span>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. What is Lorem Ipsum? Lorem
-          Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. What is Lorem Ipsum? Lorem Ipsum is
-          simply dummy text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. Lorem Ipsum is simply dummy text of the
-          printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took
-          a galley of type and scrambled it to make a type specimen book. What
-          is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. What is Lorem
-          Ipsum? Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book.
+The rapid advancement of Artificial Intelligence (AI) has revolutionized healthcare, particularly in dermatology. AI-based preliminary diagnosis accelerates the identification of skin diseases like melanoma and basal cell carcinoma by analyzing medical images. It relies on a diverse dataset like HAM10000, fine-tuning the EfficientNet model for accurate classification.
+
+Our user-friendly web interface allows users to upload images for diagnosis and integrates a chatbot for detailed disease information. With just a photo, users receive rapid, accurate assessments. The chatbot responds to queries on symptoms, precautions, and disease severity, offering comprehensive disease insights.
+
+This system enhances healthcare accessibility, empowering individuals to take proactive health measures. It aids medical professionals in decision-making, ensuring prompt diagnosis and treatment. AI-based preliminary diagnosis is a transformative tool poised to improve skin disease management.
         </p>
       </div>
     </div>
