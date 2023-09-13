@@ -316,7 +316,7 @@ const FormComponent = () => {
         </div>
       </div>
       <p
-        className="font-medium max-md:text-xs px-4 py-1 rounded-xl shadow-md bg-[#fffff] text-[#000] hover:transition all 0.2s ease-in-out cursor-pointer hover:bg-lime-100 mb-3"
+        className="font-medium px-4 py-1 rounded-xl shadow-md bg-[#fffff] text-[#000] hover:transition all 0.2s ease-in-out cursor-pointer hover:bg-lime-100 mb-3 text-xl"
         onClick={changeResultsModalState}
       >
         Results
