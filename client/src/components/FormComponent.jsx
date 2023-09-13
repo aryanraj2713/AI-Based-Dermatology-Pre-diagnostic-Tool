@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 const FormComponent = () => {
   const [username, setUserName] = useState('');
   const [useremail, setUserEmail] = useState('');
-  const [age, setAge] = useState(19);
+  const [age, setAge] = useState();
   const [prevCond, setPrevCond] = useState('');
   const [otherCond, setOtherCond] = useState('');
   const [file, setFile] = useState(null);
