@@ -1,6 +1,8 @@
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { toast } from 'sonner';
+import { store } from '../utils/store';
+import ResultsModal from './ResultsModal';
 
 const FormComponent = () => {
   const [username, setUserName] = useState('');
@@ -11,6 +13,11 @@ const FormComponent = () => {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+
+  const [isResultsModalOpen, setIsResultsModalOpen] = useState(false);
+  const changeResultsModalState = () => {
+    setIsResultsModalOpen(!isResultsModalOpen);
+  };
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -63,7 +70,20 @@ const FormComponent = () => {
           },
         );
       }
+
+      store.results = [
+        ...store.results,
+        {
+          name: username,
+          email: useremail,
+          age,
+          prevCond,
+          otherCond,
+          ...data.data,
+        },
+      ];
     } catch (error) {
+      console.log(error);
       toast.error('Something went wrong');
     }
 
@@ -105,6 +125,10 @@ const FormComponent = () => {
 
   return (
     <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center flex-col">
+      <ResultsModal
+        isOpen={isResultsModalOpen}
+        setIsOpen={setIsResultsModalOpen}
+      />
       <div className="container max-w-screen-lg mx-auto">
         <div>
           <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
@@ -291,6 +315,12 @@ const FormComponent = () => {
           </div>
         </div>
       </div>
+      <p
+        className="font-medium max-md:text-xs px-4 py-1 rounded-xl shadow-md bg-[#fffff] text-[#000] hover:transition all 0.2s ease-in-out cursor-pointer hover:bg-lime-100 mb-3"
+        onClick={changeResultsModalState}
+      >
+        Results
+      </p>
       {result && (
         <div className="w-full bg-[#EFFDF3] shadow-lg p-4 mb-6 max-w-screen-lg rounded-lg">
           <div>

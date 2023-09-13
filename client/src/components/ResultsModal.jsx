@@ -1,11 +1,13 @@
 import { Dialog, Transition } from '@headlessui/react';
 import React, { Fragment } from 'react';
+import { useSnapshot } from 'valtio';
+import { store } from '../utils/store';
 
-const LoginModal = ({ isOpen, setIsOpen }) => {
+const ResultsModal = ({ isOpen, setIsOpen }) => {
   function closeModal() {
     setIsOpen(false);
   }
-
+  const results = useSnapshot(store);
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -38,29 +40,37 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
                     as="h3"
                     className="text-xl text-center font-medium leading-6 text-gray-900"
                   >
-                    Enter your phone number
+                    Results
                   </Dialog.Title>
-                  <div className="my-6">
-                    <form action="">
-                      <div className="mb-6">
-                        {/* <label for="number" className="block mb-2 text-lg font-medium text-gray-900">Enter your number</label> */}
-                        <input
-                          id="number"
-                          className="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                          placeholder="8610736312"
-                          required
-                        />
+                  <div className="my-6 space-y-3">
+                    {results.results.map(result => (
+                      <div
+                        className="flex flex-col gap-4 bg-gray-200 p-4 rounded-lg"
+                        key={result}
+                      >
+                        <div>
+                          <p className="text-lg font-semibold">
+                            User: {result.name}, Age: {result.age}
+                          </p>
+                          <p className="text-lg font-semibold">
+                            Predicted Disease: {result.disease}
+                          </p>
+                          <p className="mb-1">Accuracy: {result.accuracy}%</p>
+                          {/* show yellow note if accuracy below 85 */}
+                          {result.accuracy < 85 && (
+                            <p className="text-yellow-700">
+                              Note: Accuracy is below 85%. Results might be
+                              inaccurate. Please consult a doctor for further
+                              diagnosis. <br />
+                              Retry with a better image.
+                            </p>
+                          )}
+                        </div>
                       </div>
-                    </form>
+                    ))}
                   </div>
 
                   <div className="flex flex-row gap-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                    >
-                      Get OTP
-                    </button>
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
@@ -79,4 +89,4 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
   );
 };
 
-export default LoginModal;
+export default ResultsModal;

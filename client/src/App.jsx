@@ -8,6 +8,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import FormComponent from './components/FormComponent';
 import LoginModal from './components/LoginModal';
+import ResultsModal from './components/ResultsModal';
 import Slider from './components/Slider';
 import Team from './components/Team';
 
@@ -19,7 +20,8 @@ export function App() {
   return (
     <Element name="Home">
       <Toaster richColors closeButton expand />
-      {isModalOpen ? <LoginModal /> : ''}
+      <LoginModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
+
       <div>
         <header className="bg-[#F8F9FA] w-full h-20 sticky z-50 top-0 shadow-md">
           <nav className="flex justify-between items-center w-full mx-auto h-full px-10 py-2 max-md:px-4">
